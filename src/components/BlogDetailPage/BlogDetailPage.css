@@ -1,0 +1,43 @@
+.icon-color {
+  color: rgb(255, 157, 0);
+  text-align: center;
+}
+
+.fa-star {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.share {
+  /* width: 170px; */
+  padding: 13px 35px;
+  /* padding-bottom: 30px; */
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  display: inline-block;
+}
+.share-experience-btn {
+  color: #fff;
+  border: 3px solid #622a87;
+  background-image: -webkit-linear-gradient(
+    30deg,
+    #622a87 50%,
+    transparent 50%
+  );
+  background-image: linear-gradient(30deg, #622a87 50%, transparent 50%);
+  background-size: 600px;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+.share-experience-btn:hover {
+  background-position: 100%;
+  color: #622a87;
+}

@@ -9,7 +9,7 @@ const BlogDetailPage = () => {
     const [singleblog, setSingleBlog] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/blogs/${detailId}`)
+        fetch(`https://travel-the-world11.herokuapp.com/blogs/${detailId}`)
         .then(res => res.json())
         .then(data => setSingleBlog(data));
     },[])

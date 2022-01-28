@@ -1,12 +1,14 @@
 import React from 'react';
 import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const SingleBlogs = ({ blog}) => {
     const { name, price, experience, img, date, rating, _id} = blog;
     // if(loading){
     //     return <h2>Loading....</h2>
     // }
+    const { admin } = useAuth()
     return (
         <div>
              <div>
@@ -33,6 +35,9 @@ const SingleBlogs = ({ blog}) => {
                         </p>
                             {/* <Link to={`/placeorder/${_id}`}><button className="Buy-Now">Buy Now</button></Link> */}
                             <Link to={`/detail/${_id}`} ><button type="">Read More</button></Link>
+                            { admin &&
+                                 <Link to={`/detail/${_id}`} ><button type="">DELETE</button></Link>
+                            }
                         </div>
                     </div>
                 </div>

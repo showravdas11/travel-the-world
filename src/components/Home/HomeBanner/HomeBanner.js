@@ -18,10 +18,8 @@ const HomeBanner = () => {
         <img src="https://wanderland.qodeinteractive.com/wp-content/uploads/2019/11/h1-rev-slide1-bckg.jpg" class="d-block w-100" alt="..."></img>
         </div>
        <div className='carousel-text'>
-           <h1>loremfdfsdfasffsdfsdfsfsf</h1>
-           <p>loremsfsfsfsdffljhkpgjkegjlfkjklvjklvkljafgjfsfkjf
-               sfsjfskljfklfjkfusflf;kfkopkl;kfsdf
-           </p>
+           <h1>Travel The World</h1>
+           <p>Visit our site, know about the world and explore the world</p>
        </div>
    </div>
    <div className='carousel-item'>
@@ -29,10 +27,8 @@ const HomeBanner = () => {
         <img src="https://demo.sociolib.com/track/wp-content/uploads/sites/4/2021/09/snrsbk.jpg" class="d-block w-100" alt="..."></img>
         </div>
        <div className='carousel-text'>
-           <h1>loremfdfsdfasffsdfsdfsfsf</h1>
-           <p>loremsfsfsfsdffljhkpgjkegjlfkjklvjklvkljafgjfsfkjf
-               sfsjfskljfklfjkfusflf;kfkopkl;kfsdf
-           </p>
+       <h1>Travel The World</h1>
+           <p>Visit our site, know about the world and explore the world</p>
        </div>
    </div>
    <div className='carousel-item'>
@@ -40,10 +36,8 @@ const HomeBanner = () => {
         <img src="https://templatekit.jegtheme.com/travenu/wp-content/uploads/sites/22/2020/12/Image-527SAYS.jpg" class="d-block w-100" alt="..."></img>
         </div>
        <div className='carousel-text'>
-           <h1>loremfdfsdfasffsdfsdfsfsf</h1>
-           <p>loremsfsfsfsdffljhkpgjkegjlfkjklvjklvkljafgjfsfkjf
-               sfsjfskljfklfjkfusflf;kfkopkl;kfsdf
-           </p>
+        <h1>Travel The World</h1>
+           <p>Visit our site, know about the world and explore the world</p>
        </div>
    </div>
    </div>

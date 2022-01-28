@@ -1,13 +1,11 @@
 import { default as React } from 'react';
 import { useForm } from "react-hook-form";
-import './ShareYourExperience.css';
+import './AddBlog.css';
 
 
-const ShareYourExperience = () => {
+const AddBlog = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        const blog = {...data, isApproved: false}
-        console.log(data);
         
         // axios.post('https://travel-the-world11.herokuapp.com/blogs/', data)
         // .then(res => {
@@ -19,8 +17,10 @@ const ShareYourExperience = () => {
      headers: {
               'Content-Type': 'application/json'
              },
-              body: JSON.stringify(blog)
+              body: JSON.stringify(data)
       })
+      .then(res => res.json())
+      .then(data => alert("Blog added successfully"))
 
             // .catch((err) => console.log(err));
     }                   
@@ -45,4 +45,4 @@ const ShareYourExperience = () => {
     );
 };
 
-export default ShareYourExperience;
+export default AddBlog;

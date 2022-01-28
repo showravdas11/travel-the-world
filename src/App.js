@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import "./App.css";
 import AboutUs from './components/AboutUs/AboutUs';
 import BlogDetailPage from "./components/BlogDetailPage/BlogDetailPage";
+import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import Home from "./components/Home/Home/Home";
 import Navigation from './components/Home/Navigation/Navigation';
 import Login from "./components/Login/Login/Login";
@@ -37,6 +38,9 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
 
             
           </Switch>

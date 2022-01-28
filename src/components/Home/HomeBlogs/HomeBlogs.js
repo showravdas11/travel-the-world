@@ -13,7 +13,7 @@ const HomeBlogs = () => {
 
     useEffect(() => {
         // setLoading(true)
-        fetch(`http://localhost:5000/blogsCount`)
+        fetch(`https://travel-the-world11.herokuapp.com/blogsCount`)
             .then(res => res.json())
             .then(data => setTotalBlogs(data.count))
             // setLoading(false)
@@ -21,7 +21,7 @@ const HomeBlogs = () => {
 
     useEffect(() => {
         // setLoading(true)
-        fetch(`http://localhost:5000/blogs?page=${currentPage}`)
+        fetch(`https://travel-the-world11.herokuapp.com/blogs?page=${currentPage}`)
             .then(res => res.json())
             .then(data => {
                 setBlogs(data)

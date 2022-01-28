@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+.about-bg {
+  background: linear-gradient(
+      0deg,
+      rgba(105, 5, 187, 0.301),
+      rgba(105, 5, 187, 0.582)
+    ),
+    url("https://detour.hibootstrap.com/images/breadcrumb/breadcrumb-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70vh;
+}
+
+.explore-head {
+  color: white;
+}
+
+.item {
+  text-decoration: none;
+  color: white;
+}
+.item:hover {
+  color: white;
+}
+
+.about-text {
+  color: #f4834a;
+  font-size: 19px;
+  font-weight: 500;
+  margin-top: 80px;
+  /* justify-content: space-between; */
+}
+
+.provide {
+  font-size: 35px;
+  font-weight: 700;
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+
+.quality {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-img {
+  background-color: #f4834a;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.cart-text {
+  margin-left: 20px;
+  word-wrap: break-word;
+  color: rgba(53, 52, 52, 0.596);
+}
+.best-provide {
+  border: 1px solid rgba(128, 128, 128, 0.479);
+  margin-top: 25px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: -3px 16px 24px -5px rgba(0, 0, 0, 0.54);
+  -webkit-box-shadow: -3px 16px 24px -5px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: -3px 16px 24px -5px rgba(0, 0, 0, 0.54);
+}
+
+/* .ssdd{
+    background-image: url('https://detour.hibootstrap.com/images/shape-10.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+} */
+
+.slider {
+  /* margin-bottom: 50px; */
+  margin-top: 80px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -3px 16px 24px -5px rgba(0, 0, 0, 0.54);
+  -webkit-box-shadow: -3px 16px 24px -5px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: -3px 16px 24px -5px rgba(0, 0, 0, 0.54);
+  border-radius: 10px;
+}
+
+.slider-text {
+  padding: 10px;
+}
+
+.all-services {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.all-services h2 {
+  font-size: 35px;
+  font-weight: 700;
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+.all-services p {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  color: #f4834a;
+  font-family: "Poppins", sans-serif;
+}
+
+.services-btn {
+  padding: 12px 40px;
+  border: 1px solid black;
+  background-color: transparent;
+  transition: 0.5s;
+  font-size: 19px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.services-btn:hover {
+  background-color: #f4834a;
+  color: white;
+}
+
+.service-title {
+  font-weight: 700;
+  transition: 0.3s;
+}
+.service-title:hover {
+  color: #f4834a;
+}
+
+.upcoming-tours {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.upcoming-tours h2 {
+  font-size: 35px;
+  font-weight: 700;
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+.upcoming-tours p {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  color: #f4834a;
+  font-family: "Poppins", sans-serif;
+}
+
+.uocoming-tour-details {
+  background-color: rgb(255, 255, 255);
+  /* margin-top: 8px; */
+  padding: 8px;
+}
+.uocoming-tour-details:hover {
+  background-color: #f4834a;
+}

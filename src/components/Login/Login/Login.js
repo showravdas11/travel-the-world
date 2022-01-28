@@ -6,7 +6,7 @@ import './Login.css';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({})
-    const { user, loginUser, isLoading, authError} = useAuth()
+    const { user, loginUser, isLoading, signInWithGoogle, authError} = useAuth()
 
     const location = useLocation();
     const history = useHistory()
@@ -23,6 +23,10 @@ const Login = () => {
     const handleLoginSubmit = e => {
         loginUser (loginData.email, loginData.password, location, history)
         e.preventDefault();
+    }
+
+    const handleGoogleSignIn = () =>{
+        signInWithGoogle(location, history)
     }
     return (
         <>
@@ -57,6 +61,9 @@ const Login = () => {
                             <br />
                             <div className='d-flex justify-content-center'>
                             <button type="submit" className='Log-btn'>Login</button>
+                            </div>
+                            <div className='d-flex justify-content-center'>
+                            <button onClick={handleGoogleSignIn} type="submit" className='google-btn'>Google Sign In</button>
                             </div>
                             <br />
                             <Link to="/register" className='line'>New user? Please register</Link>

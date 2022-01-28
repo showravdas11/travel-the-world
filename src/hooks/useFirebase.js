@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeFirebase from "../components/Login/Firebase/firebase.init";
 
@@ -18,13 +18,27 @@ const useFirebase = () => {
 
 
     const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider();
 
-    const registerUser = (email, password) => {
+    const registerUser = (email, password, name, history) => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
             setAuthError ('');
+            const newUser = {email, displayName:name}
+            setUser(newUser)
+
+            updateProfile(auth.currentUser, {
+              displayName: name
+            }).then(() => {
+              // Profile updated!
+              // ...
+            }).catch((error) => {
+              // An error occurred
+              // ...
+            });
+            history.replace('/')
           })
           .catch((error) => {
             setAuthError (error.message);
@@ -48,6 +62,17 @@ const useFirebase = () => {
           .finally(() => setIsLoading(false));
     }
 
+    const signInWithGoogle = ( location, history) =>{
+      setIsLoading(true)
+          signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        const user = result.user;
+        setAuthError ('');
+      }).catch((error) => {
+        setAuthError (error.message);
+  })
+  .finally(() => setIsLoading(false));
+    }
 
 
     useEffect(() => {
@@ -77,7 +102,8 @@ const useFirebase = () => {
         loginUser,
         registerUser,
         logout,
-        authError
+        authError,
+        signInWithGoogle
     }
 
 

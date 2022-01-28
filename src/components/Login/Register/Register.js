@@ -1,12 +1,14 @@
 import { Alert, LinearProgress, TextField } from '@mui/material';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './Register.css';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({})
     const { user, registerUser, isLoading, authError} = useAuth()
+
+    const history = useHistory()
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -22,7 +24,7 @@ const Register = () => {
             alert('password did not match');
             return
         }
-        registerUser(loginData.email, loginData.password)
+        registerUser(loginData.email, loginData.password, loginData.name, history)
         e.preventDefault();
     }
     return (

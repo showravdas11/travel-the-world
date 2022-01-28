@@ -5,10 +5,15 @@ import AboutUs from './components/AboutUs/AboutUs';
 import BlogDetailPage from "./components/BlogDetailPage/BlogDetailPage";
 import Home from "./components/Home/Home/Home";
 import Navigation from './components/Home/Navigation/Navigation';
+import Login from "./components/Login/Login/Login";
+import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
+import Register from "./components/Login/Register/Register";
 import ShareYourExperience from "./components/ShareYourExperience/ShareYourExperience";
+import AuthProvider from "./context/AuthProvider/AuthProvider";
 function App() {
   return (
-       <BrowserRouter>
+       <AuthProvider>
+         <BrowserRouter>
           <Navigation></Navigation>
           <Switch>
             <Route exact path="/">
@@ -20,15 +25,23 @@ function App() {
             <Route path="/about">
               <AboutUs></AboutUs>
             </Route>
-            <Route path="/detail/:detailId">
+            <PrivateRoute path="/detail/:detailId">
              <BlogDetailPage></BlogDetailPage>
-            </Route>
-            <Route path="/shareExperience">
+            </PrivateRoute>
+            <PrivateRoute path="/shareExperience">
              <ShareYourExperience></ShareYourExperience>
+            </PrivateRoute>
+            <Route path="/login">
+              <Login></Login>
             </Route>
+            <Route path="/register">
+              <Register></Register>
+            </Route>
+
             
           </Switch>
         </BrowserRouter>
+       </AuthProvider>
   );
 }
 

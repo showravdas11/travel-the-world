@@ -11,3 +11,16 @@ textarea {
   margin-bottom: 10px;
   padding: 10px;
 }
+
+.share-ex-head {
+  background: rgb(223, 117, 153);
+  background: linear-gradient(
+    90deg,
+    rgba(223, 117, 153, 1) 35%,
+    rgba(138, 25, 159, 1) 86%
+  );
+  padding-left: 50px;
+  /* border-radius: 54% 46% 100% 0% / 64% 62% 38% 36%; */
+  border-radius: 52% 48% 80% 20% / 12% 85% 15% 88%;
+  width: 600px;
+}

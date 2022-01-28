@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import './Navigation.css';
 
 const Navigation = () => {
+  const { user, logout } = useAuth();
     return (
         <>
         <div>
@@ -36,50 +38,17 @@ const Navigation = () => {
                 <Link to="/about" className="nav-link topic">
                 About Us</Link>
             </li>
-{/* 
-            {user?.email && (
-              <li className="nav-item  fitpal-nav-item me-4">
-                <Link className="nav-link topic" to="/dashboard">
-                  Dashboard
-                </Link>
-              </li>
-            )} */}
-
-            {/* {user?.email ? (
-              <button
-                onClick={logOut}
-                style={{ outline: 0, border: 0, borderRadius: "3px" }}
-              >
-                LogOut
-              </button>
-            ) : (
-              <li className="nav-item fitpal-nav-item me-4">
-                <Link className="nav-link topic login-btn" to="/login">
-                  Login
-                </Link>
-              </li>
-            )} */}
+            <li class="nav-item">
+                <Link to="/shareExperience" className="nav-link topic">
+                Share Your Experience</Link>
+            </li>
           </ul>
-
-          {/* {user.email && (
-            <div className="mx-3">
-              <img
-                style={{ width: "40px", height: "40px", borderRadius: "50%" }}
-                src={user?.photoURL}
-                alt=""
-              />
-              <span className="text-light">
-                {" "}
-                {user?.displayName} | {admin ? "Admin" : "Subscriber"}
-              </span>
-            </div>
-          )} */}
-
           <div>
-              <i class="fas fa-shopping-cart"></i>
-          </div>
-          <div>
-              <button type="button">LOGIN</button>
+          {
+                                user?.email ?
+                                    <button className="dash-btn mx-2" onClick={logout}>Logout</button> :
+                                    <Link className="dash-link" to="/login"><button className="dash-btn">Login</button></Link>
+                            }
           </div>
         </div>
       </div>

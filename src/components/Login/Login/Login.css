@@ -1,0 +1,33 @@
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-form form {
+  background-color: rgb(235, 229, 229);
+  padding: 60px;
+}
+.Log-btn {
+  background: #15d798;
+  border: 2px solid #556699;
+  border-radius: 11px;
+  box-shadow: 0 4px #999999;
+  padding: 8px 100px;
+  color: #ffffff;
+  /* display: inline-block; */
+  font: normal bold 26px/1 "Open Sans", sans-serif;
+  text-align: center;
+}
+.login-head {
+  background: rgb(223, 117, 153);
+  background: linear-gradient(
+    90deg,
+    rgba(223, 117, 153, 1) 35%,
+    rgba(138, 25, 159, 1) 86%
+  );
+  padding-left: 50px;
+  /* border-radius: 54% 46% 100% 0% / 64% 62% 38% 36%; */
+  border-radius: 52% 48% 80% 20% / 12% 85% 15% 88%;
+  width: 600px;
+  color: white;
+}

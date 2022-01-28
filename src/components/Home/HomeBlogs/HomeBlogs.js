@@ -1,19 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import SingleBlogs from '../SingleBlogs/SingleBlogs';
+import './HomeBlogs.css';
 
 const HomeBlogs = () => {
     const [blogs, setBlogs] = useState([])
+    const [currentPage, setCurrentPage] = useState(1)
+    const [pageNumbers, setPageNumbers] = useState([])
+    const [totaBlogs, setTotalBlogs] = useState(0)
     // const [loading,setLoading] = useState(false)
     // const [currentPage, setCurrentPage] = useState(1)
     // const [postsPerPage, setPostPerPage] = useState(10)
 
     useEffect(() => {
         // setLoading(true)
-        fetch('http://localhost:5000/blogs')
+        fetch(`http://localhost:5000/blogsCount`)
             .then(res => res.json())
-            .then(data => setBlogs(data))
+            .then(data => setTotalBlogs(data.count))
             // setLoading(false)
     }, [])
+
+    useEffect(() => {
+        // setLoading(true)
+        fetch(`http://localhost:5000/blogs?page=${currentPage}`)
+            .then(res => res.json())
+            .then(data => {
+                setBlogs(data)
+                let totalPage
+                console.log(totaBlogs)
+                if(totaBlogs % 10 === 0) {
+                    totalPage = totaBlogs / 10
+                } else {
+                    totalPage = parseInt((totaBlogs / 10)) + 1
+                }
+                console.log(totalPage)
+                let newPageNumbers = []
+                for(let i = 0; i < totalPage; i++) {
+                    newPageNumbers.push(i+1)
+                }
+                setPageNumbers(newPageNumbers)
+            })
+            // setLoading(false)
+    }, [totaBlogs, currentPage])
 
     //get current page
 //     const indexOfLastPost = currentPage * postsPerPage;
@@ -21,10 +48,8 @@ const HomeBlogs = () => {
 //   const currentPosts = blogs.slice(indexOfFirstPost, indexOfLastPost);
     return (
         <>
-        <div className="homeproduct-section">
-            <p className="text-center">OUR VEHICLES BRANDS & TYPE</p>
-            <h3 className="products-head text-center"><span>Find Your</span> Best Vehicles.</h3>
-            h3
+        <div className="homeproduct-section d-flex justify-content-center">
+            <h3 className="text-center experience-head">Experience Of Our Travelers</h3>
         </div>
 
         <div className="product-bg">
@@ -39,6 +64,13 @@ const HomeBlogs = () => {
                         >
 
                         </SingleBlogs>) 
+                    }
+                </div>
+                <div className='d-flex justify-content-center mb-5'>
+                    {
+                        pageNumbers.map(page => (
+                            <button type="text" className={`btn me-2 ${page == currentPage ? 'btn-primary' : ''}`} onClick={() => setCurrentPage(page)} >{page}</button>
+                        ))
                     }
                 </div>
             </div>
